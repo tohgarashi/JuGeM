@@ -309,10 +309,11 @@ def build_font(_f, emoji):
     jp_font = remove_glyph_from_jp_font(jp_font, _f.get("jp_font"))
 
     log('transform juliamono')
-    for g in juliamono.glyphs():
-        if _f.get('juliamono_weight_reduce') != 0:
+    if _f.get('juliamono_weight_reduce') != 0:
+        for g in juliamono.glyphs():
             g.changeWeight(_f.get('juliamono_weight_reduce'), 'auto', 0, 0, 'auto')
-        g = align_to_center(g)
+            g.width = HALFWIDTH
+            # g = align_to_center(g)
 
     if _f.get('jp_font_weight_add') != 0:
         for g in jp_font.glyphs():
