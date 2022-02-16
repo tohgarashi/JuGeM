@@ -26,7 +26,7 @@ fonts = [
         "style_name": "Light",
         "juliamono": "JuliaMono-Light.ttf",
         "jp_font": "GenJyuuGothicL-Monospace-Light.ttf",
-        "juliamono_weight_reduce": 0,
+        "juliamono_weight_reduce": -30,
         "jp_font_weight_add": 0,
         "italic": False,
     },
@@ -39,7 +39,7 @@ fonts = [
         "style_name": "Light Italic",
         "juliamono": "JuliaMono-LightItalic.ttf",
         "jp_font": "GenJyuuGothicL-Monospace-Light.ttf",
-        "juliamono_weight_reduce": 0,
+        "juliamono_weight_reduce": -30,
         "jp_font_weight_add": 0,
         "italic": True,
     },
@@ -306,14 +306,11 @@ def build_font(_f, emoji):
     log("remove_glyph_from_jp_font()")
     jp_font = remove_glyph_from_jp_font(jp_font, _f.get("jp_font"))
 
-    # log('transform juliamono')
-    # for g in juliamono.glyphs():
-    #     g.transform((0.42,0,0,0.42,0,0))
-    #     if _f.get('juliamono_weight_reduce') != 0:
-    #         # g.changeWeight(_f.get('juliamono_weight_reduce'), 'auto', 0, 0, 'auto')
-    #         g.stroke("circular", _f.get('juliamono_weight_reduce'), 'butt', 'round', 'removeexternal')
-    #     g = align_to_center(g)
-    # juliamono = modify_m(juliamono, _f.get('weight_name'))
+    log('transform juliamono')
+    for g in juliamono.glyphs():
+        if _f.get('juliamono_weight_reduce') != 0:
+            g.changeWeight(_f.get('juliamono_weight_reduce'), 'auto', 0, 0, 'auto')
+        g = align_to_center(g)
 
     if _f.get('jp_font_weight_add') != 0:
         for g in jp_font.glyphs():
