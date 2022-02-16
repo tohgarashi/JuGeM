@@ -181,7 +181,9 @@ def remove_glyph_from_jp_font(_font, jp_font_name):
         over_finish = 0x11061a
     glyphs = (
         list(range(0x0000, 0x2E7F + 0x1))
+        # + list(range(0x3248, 0x325f + 0x1))
         + list(range(0x1D400, 0x1D7FF + 0x1))
+        + list(range(0x1f100, 0x1f1a0 + 0x1))
         + list(range(0x110000, over_finish + 0x1))
     )
 
