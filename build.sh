@@ -5,6 +5,8 @@ DIST="$(pwd)/dist"
 mkdir -p "${DIST}"
 log="${DIST}/log.txt"
 touch "${log}"
+error_log="${DIST}/error_log.txt"
+touch "${error_log}"
 
 mkdir -p "${SOURCE}"
 cd "${SOURCE}"
@@ -34,4 +36,4 @@ fi
 cd ..
 
 echo "Build" | tee -a "${log}"
-fontforge -lang=py -script JuGeM.py 2>&1 | tee -a "${log}"
+fontforge -lang=py -script JuGeM.py 2>"${error_log}" | tee -a "${log}"
