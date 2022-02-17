@@ -35,5 +35,19 @@ fi
 
 cd ..
 
-echo "Build" | tee -a "${log}"
-fontforge -lang=py -script JuGeM.py 2>"${error_log}" | tee -a "${log}"
+if [ ! -e "${DIST}/noemoji/JuGeM-Regular.ttf" ]; then
+  echo "Build" | tee -a "${log}"
+  fontforge -lang=py -script JuGeM.py 2>>"${error_log}" | tee -a "${log}"
+fi
+
+cd "${DIST}/noemoji"
+
+if [ ! -e "${DIST}/noemoji/before/JuGeM-Regular.ttf" ]; then
+  echo "modify xAvgCharWidth" | tee -a "${log}"
+  for file in JuGeM*.ttf; do
+    ttx -t OS/2 "$file" 2>&1 | tee -a "${log}"
+    xmlstarlet ed --inplace -u "/ttFont/OS_2/xAvgCharWidth/@value" -v 1199 "${file%%.ttf}.ttx"
+    mv "$file" "./before/${file}" | tee -a "${log}"
+    ttx -m "./before/${file}" "${file%%.ttf}.ttx" 2>&1 | tee -a "${log}"
+  done
+fi
