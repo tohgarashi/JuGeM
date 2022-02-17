@@ -1,5 +1,11 @@
 # プログラミング用日本語等幅フォント JuGeM
 
+## ダウンロード
+
+[Releases](https://github.com/tohgarashi/JuGeM/releases)から`JuGeM-ttf.tar.gz`をダウンロードし解凍すると、各種ttfファイルが入っています。
+
+これを環境に応じて配置してください。
+
 ## 特徴
 
 - JuliaMonoと源柔ゴシック等幅Lを合成・調整した、プログラミング用の日本語等幅フォントです。
