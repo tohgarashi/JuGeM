@@ -2,7 +2,7 @@
 
 ## ダウンロード
 
-[Releases](https://github.com/tohgarashi/JuGeM/releases)から`JuGeM-ttf.tar.gz`をダウンロードし解凍すると、各種ttfファイルが入っています。
+[Releases](https://github.com/tohgarashi/JuGeM/releases)から`JuGeM-ttf.tar.gz`または`JuGeM-ttf.7z`をダウンロードし解凍すると、各種ttfファイルが入っています。
 
 これを環境に応じて配置してください。
 
