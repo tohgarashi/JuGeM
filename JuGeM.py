@@ -13,7 +13,7 @@ HALFWIDTH = 1200
 SOURCE = os.getenv('JuGeM_SOURCE_FONTS_PATH', './sourceFonts')
 LICENSE = open('./LICENSE.txt').read()
 COPYRIGHT = open('./COPYRIGHT.txt').read()
-VERSION = '0.1.0'
+VERSION = '0.1.1'
 FAMILY = 'JuGeM'
 
 fonts = [
