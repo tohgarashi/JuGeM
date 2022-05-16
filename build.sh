@@ -13,7 +13,7 @@ cd "${SOURCE}"
 
 if [ ! -e "JuliaMono-Regular.ttf" ]; then
   echo "Prepare JuliaMono Font" | tee -a "${log}"
-  curl -LO "https://github.com/cormullion/juliamono/releases/download/v0.044/JuliaMono-ttf.tar.gz" | tee -a "${log}"
+  curl -LO "https://github.com/cormullion/juliamono/releases/download/v0.045/JuliaMono-ttf.tar.gz" | tee -a "${log}"
   unar JuliaMono-ttf.tar.gz 2>&1 | tee -a "${log}"
   for f in $(find ./JuliaMono-ttf/ -name "*.ttf"); do
     cp "${f}" ./ | tee -a "${log}"

@@ -13,7 +13,7 @@ HALFWIDTH = 1200
 SOURCE = os.getenv('JuGeM_SOURCE_FONTS_PATH', './sourceFonts')
 LICENSE = open('./LICENSE.txt').read()
 COPYRIGHT = open('./COPYRIGHT.txt').read()
-VERSION = '0.1.1'
+VERSION = '0.1.2'
 FAMILY = 'JuGeM'
 
 fonts = [
@@ -26,7 +26,7 @@ fonts = [
         "style_name": "Light",
         "juliamono": "JuliaMono-Light.ttf",
         "jp_font": "GenJyuuGothicL-Monospace-Light.ttf",
-        "juliamono_weight_reduce": -30,
+        "juliamono_weight_reduce": 0,
         "jp_font_weight_add": 0,
         "italic": False,
     },
@@ -39,7 +39,7 @@ fonts = [
         "style_name": "Light Italic",
         "juliamono": "JuliaMono-LightItalic.ttf",
         "jp_font": "GenJyuuGothicL-Monospace-Light.ttf",
-        "juliamono_weight_reduce": -30,
+        "juliamono_weight_reduce": 0,
         "jp_font_weight_add": 0,
         "italic": True,
     },
